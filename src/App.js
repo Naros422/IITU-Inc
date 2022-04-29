@@ -18,7 +18,6 @@ function App() {
         <Route path='/trello' element={<Trello/>} />
         <Route path='/profile' element={<Profile/>} />
         <Route path='/attendance' element={<Attendance/>} />
-        <Route path='/achievments' element={<Achievments/>} />
     </Routes>
     </Router>
   );

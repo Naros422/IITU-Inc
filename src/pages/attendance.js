@@ -1,4 +1,7 @@
 import React, { Component } from 'react'
+import './attendance.css';
+import classnames from 'classnames';
+import * as calendar from './calendar';
 
 export default class attendance extends Component {
 
@@ -27,20 +30,22 @@ get day(){
 }
 handlePrevMonthButtonClick = () =>{
 const date = new Date(this.year,this.month-1);
-console.log(date)
 this.setState({date});
 
 };
 handleNextMonthButtonClick = () =>{
   const date = new Date(this.year,this.month+1);
-  console.log(date)
 this.setState({date});
 };
 handleSelectChange = () =>{
-  
+
+  const year = this.yearSelect.value;
+  const month = this.monthSelect.value;
+  const date = new Date(year, month);
+
+  this.setState({ date });
 };
 handleDayClick = date =>{
-  console.log(date)
   this.setState({selectedDate:date});
 
   this.props.onChange(date);
@@ -48,46 +53,50 @@ handleDayClick = date =>{
 
   render() {
     const{years,monthNames,weekDayNames} = this.props;
+    const {currentDate, selectedDate} = this.state;
 
-    const monthDate = [
-      [undefined,undefined,new Date(),new Date(),new Date(),new Date(),new Date()],
-      [new Date(),new Date(),new Date(),new Date(),new Date(),new Date(),new Date()],
-      [new Date(),new Date(),new Date(),new Date(),new Date(),new Date(),new Date()],
-      [new Date(),new Date(),new Date(),new Date(),new Date(),new Date(),new Date()],
-      [new Date(),new Date(),new Date(),new Date(),undefined,undefined,undefined]
-    ];
+    const monthDate = calendar.getMonthData(this.year,this.month);
 
     return (
-      <div className='attendance'>
+      <div className='calendar'>
         <header>
-          <button onClick={this.handlePrevMonthButtonClick}>{'<'}</button>
+          <button class="btn btn-primary btn-lg" onClick={this.handlePrevMonthButtonClick}>{'<'}</button>
 
-          <select>
+          <select 
+          ref={element => this.monthSelect  =element}
+          value={this.month}
+          onChange={this.handleSelectChange}>
             {monthNames.map((name,index)=>
             <option key={name} value={index}>{name}</option>
             )}
           </select>
           
-          <select>
+          <select 
+          ref={element => this.yearSelect  =element}
+          value={this.year}
+          onChange={this.handleSelectChange}>
             {years.map(year=>
               <option key={year} value={year}>{year}</option>
               )}
           </select>
 
-          <button onClick={this.handleNextMonthButtonClick}>{'>'}</button>
+          <button class="btn btn-primary btn-lg" onClick={this.handleNextMonthButtonClick}>{'>'}</button>
 
-          <table>
+          <table class="table table-hover">
             <thead>
               <tr>
                 {weekDayNames.map(name =>
-                  <th key={name}>{name}</th>
+                  <th scope="col" key={name}>{name}</th>
                   )}
               </tr>
             </thead>
             <tbody>
               {monthDate.map((week,index)=>
-                <tr key={index} className='week'>{week.map((date,index)=>date ?
-                  <td key={index} className='day' onClick={()=> this.handleDayClick(date)}>{date.getDate()}</td>
+                <tr class="table-active" key={index} className='week'>{week.map((date,index)=>date ?
+                  <td key={index} className={classnames('day', {
+                    'today': calendar.areEqual(date, currentDate),
+                    'selected': calendar.areEqual(date, selectedDate)
+                })} onClick={()=> this.handleDayClick(date)}>{date.getDate()}</td>
                   :
                   <td key={index}/>
                   )}</tr>

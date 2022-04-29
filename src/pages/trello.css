@@ -8,7 +8,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    /* background-color: blue; */
+    background: url(https://kartinkin.net/uploads/posts/2021-01/1611414219_57-p-zadnii-fon-dlya-platformera-60.jpg);
 }
 .board {
     min-width: 300px;
