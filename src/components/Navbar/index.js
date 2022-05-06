@@ -27,6 +27,9 @@ const Navbar = () => {
         <li class="nav-item">
         <NavLink to="/profile" class="nav-link" href="#" activeStyle>Profile</NavLink>
         </li>
+        <li class="nav-item">
+        <NavLink to="/achievments" class="nav-link" href="#" activeStyle>Tracking</NavLink>
+        </li>
       </ul>
     </div>
   </div>
