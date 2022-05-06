@@ -18,13 +18,6 @@ const Profile = () => {
                     <p>My hobbies are sports, music, and self-development</p>
                 </div>
             <div className='logo'></div>
-            <div className='skills'>
-              <p>I can speak English, Russian, and Kazakh languages</p>
-              <p>I have many skills. These are programming skills, computer skills, skills in sphere marketing and so on</p>
-              <p>About programming skills: HTML, CSS, JS, JAVA, C++, Python, C#. </p>
-              <p>About computer skills: Windows 10, programs Excel, Photoshop, Adobe After Effects, Adobe Premiere Pro.</p>
-              <p>I also have a very good soft skill. I am a sociable person and in a new environment I quickly find a common language</p>
-            </div>
             <div className='Contact'>
               <header>Contact</header>
               <input className='name-txt' type="text" placeholder="ENTER YOUR NAME"></input>

@@ -1,0 +1,13 @@
+.House header{
+    width: 100%;
+    background-color: brown;
+    height: 60px;
+    text-align: center;
+    font-size: 30px;
+}
+.House h{
+    color:antiquewhite;
+    cursor: pointer;
+    word-spacing: 22px;
+    
+}
