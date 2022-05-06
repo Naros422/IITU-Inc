@@ -1,17 +1,19 @@
 {
   "files": {
-    "main.css": "/IITU-Inc/static/css/main.36972b29.css",
-    "main.js": "/IITU-Inc/static/js/main.93bd861a.js",
+    "main.css": "/IITU-Inc/static/css/main.3fc09b61.css",
+    "main.js": "/IITU-Inc/static/js/main.326ab985.js",
     "static/js/787.b1691edf.chunk.js": "/IITU-Inc/static/js/787.b1691edf.chunk.js",
     "static/media/wallhaven-zxoeww (2).png": "/IITU-Inc/static/media/wallhaven-zxoeww (2).01faa067b23d0adb97bd.png",
     "static/media/me.png": "/IITU-Inc/static/media/me.b10fa4ea5d9562061462.png",
+    "static/media/ww1233.png": "/IITU-Inc/static/media/ww1233.744323f37a8034e65816.png",
+    "static/media/currency.png": "/IITU-Inc/static/media/currency.36a1752d5a90fdedf7ea.png",
     "index.html": "/IITU-Inc/index.html",
-    "main.36972b29.css.map": "/IITU-Inc/static/css/main.36972b29.css.map",
-    "main.93bd861a.js.map": "/IITU-Inc/static/js/main.93bd861a.js.map",
+    "main.3fc09b61.css.map": "/IITU-Inc/static/css/main.3fc09b61.css.map",
+    "main.326ab985.js.map": "/IITU-Inc/static/js/main.326ab985.js.map",
     "787.b1691edf.chunk.js.map": "/IITU-Inc/static/js/787.b1691edf.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.36972b29.css",
-    "static/js/main.93bd861a.js"
+    "static/css/main.3fc09b61.css",
+    "static/js/main.326ab985.js"
   ]
 }
